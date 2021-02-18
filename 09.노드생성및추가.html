@@ -38,15 +38,15 @@ insertBefore(new노드, 기준노드) : 기준노드 다음에 new노드를 추�
         </tbody>
     </table>
     <button type="button" id="addList">1개추가하기</button>
-    <!-- <button type="button" id="addList5">5개추가하기</button> -->
+    <button type="button" id="addList5">5개추가하기</button>
 
     <script>
         const todoList = document.querySelector(".todoList");
         const addList = document.getElementById("addList");
         addList.addEventListener("click", createList);
 
-        // const addList5 = document.getElementById('addList5');
-        // addList5.addEventListener("click", createList5);
+        const addList5 = document.getElementById('addList5');
+        addList5.addEventListener("click", createList5);
 
         function createList() {
 
@@ -75,23 +75,24 @@ insertBefore(new노드, 기준노드) : 기준노드 다음에 new노드를 추�
             todoList.appendChild(tr);
         }
 
-        // function createList5() {
-        //     const tr = document.createElement("tr");
+        function createList5() {
+            
+            for (let i = 0; i < 5; i++) {
+                const tr = document.createElement("tr");
 
-        //     for (let i = 0; i < 5; i++) {
-        //         let td = document.createElement('td');
-        //         td.innerHTML = "<input type='text' size='3'>";
-        //         tr.appendChild(td);
-
-        //         td.innerHTML = "<input type='text'>";
-        //         tr.appendChild(td);
-
-        //         td.innerHTML = "<input type='text'>";
-        //         tr.appendChild(td);
-
-        //     }
-        //     todoList.appendChild(tr);
-        // }
+                var td = document.createElement('td');
+                td.innerHTML = "<input type='text' size='3'>";
+                tr.appendChild(td);
+                var td = document.createElement('td');
+                td.innerHTML = "<input type='text'>";
+                tr.appendChild(td);
+                var td = document.createElement('td');
+                td.innerHTML = "<input type='text'>";
+                tr.appendChild(td);
+                
+                todoList.appendChild(tr);
+            }
+        }
 
     </script>
 </body>
