@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function text1() {
+            console.log("함수1 실행됨")
+        }
+
+        function text2() {
+            console.log("함수2 실행됨")
+        }
+
+
+        // 즉시 실행함수의 형태
+        // 페이지가 로딩되었을때 바로 실행되어야하는 함수를 여기에 작성한다
+        // 맨 밑에 ()에 즉시 실행했을때 대입해야하는 props를 전달할 수도 있다
+        (function(a,b) {
+            console.log(a,b);
+            text1();
+            text2();
+        })(1, ["홍길동","이순신"]);
+
+
+    </script>
+</body>
+</html>
