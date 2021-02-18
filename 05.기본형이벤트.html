@@ -20,11 +20,21 @@
             console.log("기본 이벤트 실행");
         };
 
-        
 
+        // onload 이벤트 : 페이지가 로딩된 이후에 실행되는 이벤트, 페이지당 한번만 사용할 수 있음
+        // script 코드가 위에 있는 경우 onload 이벤트 사용
+        window.onload = function() {
+            const btn2 = document.getElementById('btn2');
+            btn2.onclick = function() {
+                console.log("window.onload 이벤트 실행");
+            }
+        }
 
     </script>
 
+    <!-- script 코드가 위에 있는 경우 -->
+    <!-- load 이벤트 사용 : 페이지로드를 마친 후 실행되는 이벤트, 페이지당 한번만 사용가능 -->
+    <button type="button" id="btn2">window.onload</button>
 
 </body>
 </html>
