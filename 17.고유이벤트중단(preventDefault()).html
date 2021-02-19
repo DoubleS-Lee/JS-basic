@@ -1,0 +1,45 @@
+<!-- 고유 태그의 이벤트 : a태그나 form태그는 동작하는 고유 이벤트를 가지고 있다
+event.preventDefault() : 이런 이벤트를 중지하는 함수 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul {padding: 0;}
+        ul > li {list-style: none; display: inline-block; border:1px solid #777; padding: 0 5px;}
+        a {text-decoration: none; color:black;}
+    </style>
+
+</head>
+<body>
+
+    <div>
+        <ul class="pageNation">
+            <li><a href="getList.board">1</a></li>
+            <li><a href="getList.board">2</a></li>
+            <li><a href="getList.board">3</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const pageNation = document.querySelector('.pageNation');
+        pageNation.onclick = function () {
+
+            // 여기서 a태그의 고유이벤트를 중지시키는 역할을 함
+            // 이 코드를 작성하지 않으면 이 밑에 있는 코드들이 작동하기 전에 a태그의 고유이벤트가 발동해서 밑에 코드가 무시되어 버린다.
+            event.preventDefault();
+
+            if(event.target.tagName != "A"){
+                return ;
+            }
+            const pageNum = event.target.innerHTML;
+            console.log(pageNum);
+        }
+    </script>
+</body>
+</html>
