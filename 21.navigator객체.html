@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        console.dir(navigator)
+
+        console.log(navigator.appVersion)
+        
+        function success(position) {
+            console.log(position)
+            console.log("위도 : " + position.coords.latitude)
+            console.log("경도 : " + position.coords.longitude)
+        }
+        
+        function fail(position) {
+            console.log("실패함")
+        }
+
+        (function() {
+            navigator.geolocation.getCurrentPosition(success, fail);
+        })()
+
+    </script>
+
+
+</body>
+</html>
