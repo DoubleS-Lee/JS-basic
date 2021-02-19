@@ -34,6 +34,7 @@ removeChild(삭제 할 자식 노드) : 자식노드삭제 -->
     </table>
     <button type="button" id="addList">1개추가하기</button>
     <button type="button" id="addList5">5개추가하기</button>
+    <button type="button" id="remove">1개삭제하기</button>
 
     <script>
         const todoList = document.querySelector(".todoList");
@@ -89,9 +90,21 @@ removeChild(삭제 할 자식 노드) : 자식노드삭제 -->
             }
         }
 
+        const remove = document.getElementById('remove');
+        remove.addEventListener('click', removeList);
 
+        function removeList() {
 
+            if (todoList.children.length === 0)
+            return ;
 
+            // console.dir(todoList);
+
+            // console.log(todoList.childNodes);
+            // console.log(todoList.children);
+            // console.log(todoList.children[0]);
+
+            todoList.removeChild(todoList.children[0])
         }
 
 
