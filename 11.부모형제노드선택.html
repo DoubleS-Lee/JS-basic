@@ -1,0 +1,51 @@
+<!-- 
+
+childNodes : 모든 자식 노드 선택 (단, 노드에 생략된(숨겨진) text도 포함된다)
+children : 모든 자식 노드 선택
+parentElement : 부모노드 선택
+nextElementSibling : 다음 형제 노드 선택
+previousElementSibling : 이전 형제 노드 선택
+firstChild : 첫번째 자식 노드 선택
+lastChild : 마지막 자식 노드 선택
+
+
+~~~~Element : 정확히 노드의 형태만 선택해서 가져온다 (노드 선택만을 위한다면 Element를 써주는 것이 좋다)
+~~~~Node : 노드 사이에 텍스트가 들어가있다면 이를 다 가져온다
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+    <section>
+        <div>이전</div>
+        <div class="now">
+            <ul>
+                <li><a>목록1</a></li>
+                <li><a>목록2</a></li>
+                <li><a>목록3</a></li>
+            </ul>
+        </div>
+        <div>다음</div>
+    </section>
+
+    <script>
+        var now = document.querySelector(".now");
+
+        console.dir(now)
+        console.log(now.parentNode); //부모노드(text도 포함해서 선택)
+        console.log(now.parentElement) //부모노드
+        console.log(now.nextElementSibling); //다음형제노드
+        console.log(now.previousElementSibling); //이전형제노드
+        console.log(now.firstElementChild); //자식첫번째노드ㄴ
+        console.log(now.lastElementChild); //자식마지막노드
+
+    </script>
+
+</body>
+</html>
